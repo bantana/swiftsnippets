@@ -272,7 +272,14 @@ endsnippet
 
 snippet check "check(Any)"
 func check(_ input: Any) {
-		print(" type:", type(of: input), " value:", input)
+	print(" type:", type(of: input), " value:", input)
+}
+${1}
+endsnippet
+snippet chmem "checkMem(Any)"
+func checkMem(_ input: Any) {
+	print(" type:", type(of: input), " value:", input)
+	print("Mem: size=\(MemoryLayout.size(ofValue: input)), stride=\(MemoryLayout.stride(ofValue: input)), alignment=\(MemoryLayout.alignment(ofValue: input))")
 }
 ${1}
 endsnippet
